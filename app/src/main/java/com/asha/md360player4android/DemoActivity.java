@@ -31,6 +31,9 @@ public class DemoActivity extends AppCompatActivity {
 
         SparseArray<String> data = new SparseArray<>();
 
+        String test = new String("file:///sdcard/DCIM/test.mp4");
+        Uri t = Uri.parse(test);
+        data.put(data.size(), t.toString());
         data.put(data.size(), getDrawableUri(R.drawable.bitmap360).toString());
         data.put(data.size(), getDrawableUri(R.drawable.texture).toString());
         data.put(data.size(), getDrawableUri(R.drawable.dome_pic).toString());
