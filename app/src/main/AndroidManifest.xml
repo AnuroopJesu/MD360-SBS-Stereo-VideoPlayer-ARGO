@@ -23,6 +23,7 @@
         <activity android:label="BitmapPlayerActivity" android:name=".BitmapPlayerActivity" android:screenOrientation="landscape" android:configChanges="screenSize|orientation" />
         <activity android:label="CubemapPlayerActivity" android:name=".CubemapPlayerActivity" android:screenOrientation="landscape" android:configChanges="screenSize|orientation" />
         <activity android:name=".RecyclerViewActivity" android:screenOrientation="portrait" android:configChanges="screenSize|orientation" />
+        <meta-data android:name="com.digilens.dynamic_display" android:value="s3d"/>
     </application>
 
 </manifest>
