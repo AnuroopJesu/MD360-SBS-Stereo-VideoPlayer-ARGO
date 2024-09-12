@@ -6,7 +6,6 @@ android {
     defaultConfig {
         applicationId "com.asha.md360player4android"
         minSdkVersion 21
-        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -23,6 +22,10 @@ tasks.withType(Javadoc) {
     options.addBooleanOption('Xdoclint:none', true)
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     testImplementation 'junit:junit:4.12'
@@ -35,10 +38,10 @@ dependencies {
     //implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
     implementation project(path: ':vrlib')
 
-    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-arm64:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.8'
+    implementation group: 'com.tencent.iot.thirdparty.android', name: 'ijkplayer-java', version: '1.0.0'
+    implementation group: 'com.tencent.iot.thirdparty.android', name: 'ijkplayer-armv7a', version: '1.0.0'
+    implementation group: 'com.mcxiaoke.ijk.media', name: 'ijkplayer-armv5', version: '0.6.2'
+    implementation group: 'com.tencent.iot.thirdparty.android', name: 'ijkplayer-arm64', version: '1.0.2'
+    //implementation group: 'com.tencent.iot.thirdparty.android', name: 'ijkplayer-x86', version: '1.0.0'
+    //implementation group: 'com.tencent.iot.thirdparty.android', name: 'ijkplayer-x86_64', version: '1.0.0'
 }

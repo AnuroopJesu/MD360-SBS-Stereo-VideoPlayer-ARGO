@@ -61,7 +61,7 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
             mMediaPlayerWrapper.prepare();
         }
 
-        findViewById(R.id.control_next).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.control_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mMediaPlayerWrapper.pause();
@@ -70,7 +70,7 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
                 mMediaPlayerWrapper.openRemoteFile(DemoActivity.sPath + "video_31b451b7ca49710719b19d22e19d9e60.mp4");
                 mMediaPlayerWrapper.prepare();
             }
-        });
+        });*/
 
     }
 

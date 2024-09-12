@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
@@ -18,7 +20,9 @@ import android.widget.Toast;
  */
 public class DemoActivity extends AppCompatActivity {
 
-    public static final String sPath = "file:///mnt/sdcard/vr/";
+    public static final String sPath = "file:///mnt/sdcard/vr/";    
+    private Handler mHandler = new Handler();
+    
 
     //public static final String sPath = "file:////storage/sdcard1/vr/";
 
@@ -31,6 +35,7 @@ public class DemoActivity extends AppCompatActivity {
 
         SparseArray<String> data = new SparseArray<>();
 
+        // Using Sample from https://www.mettle.com/360vr-master-series-free-360-downloads-page/
         String test = new String("file:///sdcard/DCIM/test.mp4");
         Uri t = Uri.parse(test);
         data.put(data.size(), t.toString());
@@ -124,8 +129,16 @@ public class DemoActivity extends AppCompatActivity {
                 RecyclerViewActivity.start(DemoActivity.this);
             }
         });
-    }
 
+        Runnable mUpdateTimeTask = new Runnable() {
+            public void run() {
+               String url = et.getText().toString();
+               MD360PlayerActivity.startVideo(DemoActivity.this, Uri.parse(url));
+            }
+        };
+
+        mHandler.postDelayed(mUpdateTimeTask, 100);
+    }
     private Uri getDrawableUri(@DrawableRes int resId){
         Resources resources = getResources();
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + resources.getResourcePackageName(resId) + '/' + resources.getResourceTypeName(resId) + '/' + resources.getResourceEntryName(resId) );

@@ -78,7 +78,7 @@
              android:layout_width="100dp"
              android:minWidth="100dp"
              android:layout_height="wrap_content"/>
-
+<!--
          <Button
              android:id="@+id/button_add_plugin"
              android:textSize="13sp"
@@ -242,7 +242,7 @@
              android:layout_width="100dp"
              android:minWidth="100dp"
              android:layout_height="wrap_content"/>
-
+-->
          <androidx.appcompat.widget.AppCompatSpinner
              android:layout_marginTop="8dp"
              android:paddingLeft="0dp"
