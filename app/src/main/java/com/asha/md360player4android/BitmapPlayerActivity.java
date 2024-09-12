@@ -35,14 +35,14 @@ public class BitmapPlayerActivity extends MD360PlayerActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        findViewById(R.id.control_next).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.control_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 busy();
                 nextUri = getDrawableUri(R.drawable.texture);
                 getVRLibrary().notifyPlayerChanged();
             }
-        });
+        });*/
     }
 
     private Target mTarget;// keep the reference for picasso.

@@ -158,7 +158,7 @@ public abstract class MD360PlayerActivity extends Activity {
         mVRLibrary = createVRLibrary();
 
         final Activity activity = this;
-
+/*
         final List<View> hotspotPoints = new LinkedList<>();
         hotspotPoints.add(findViewById(R.id.hotspot_point1));
         hotspotPoints.add(findViewById(R.id.hotspot_point2));
@@ -319,7 +319,7 @@ public abstract class MD360PlayerActivity extends Activity {
                 textView.setText("Hello world.");
 
                 MDViewBuilder builder = MDViewBuilder.create()
-                        .provider(textView, 400/*view width*/, 100/*view height*/)
+                        .provider(textView, 400, 100)
                         .size(4, 1)
                         .position(MDPosition.newInstance().setZ(-12.0f))
                         .title("md view")
@@ -352,7 +352,7 @@ public abstract class MD360PlayerActivity extends Activity {
                 view.setBackgroundColor(0x55FFCC11);
 
                 MDViewBuilder builder = MDViewBuilder.create()
-                        .provider(view, 300/*view width*/, 200/*view height*/)
+                        .provider(view, 300, 200)
                         .size(3, 2)
                         .position(MDPosition.newInstance().setZ(-8.0f))
                         .title("md view")
@@ -447,6 +447,7 @@ public abstract class MD360PlayerActivity extends Activity {
                     }
                 })
                 .init(R.id.spinner_fling_enable);
+      */
     }
 
 
