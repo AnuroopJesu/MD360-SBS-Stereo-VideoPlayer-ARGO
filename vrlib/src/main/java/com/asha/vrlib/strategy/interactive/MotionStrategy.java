@@ -82,7 +82,7 @@ public class MotionStrategy extends AbsInteractiveStrategy implements SensorEven
         if (mIsSupport == null){
             SensorManager mSensorManager = (SensorManager) context
                     .getSystemService(Context.SENSOR_SERVICE);
-            Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+            Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
             mIsSupport = (sensor != null);
         }
         return mIsSupport;
@@ -93,10 +93,10 @@ public class MotionStrategy extends AbsInteractiveStrategy implements SensorEven
 
         SensorManager mSensorManager = (SensorManager) context
                 .getSystemService(Context.SENSOR_SERVICE);
-        Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+        Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
 
         if (sensor == null){
-            Log.e(TAG,"TYPE_ROTATION_VECTOR sensor not support!");
+            Log.e(TAG,"TYPE_GAME_ROTATION_VECTOR sensor not support!");
             return;
         }
 
@@ -124,7 +124,7 @@ public class MotionStrategy extends AbsInteractiveStrategy implements SensorEven
 
             int type = event.sensor.getType();
             switch (type){
-                case Sensor.TYPE_ROTATION_VECTOR:
+                case Sensor.TYPE_GAME_ROTATION_VECTOR:
                     // post
                     VRUtil.sensorRotationVector2Matrix(event, windowManager.getDefaultDisplay().getRotation(), mSensorMatrix);
 
